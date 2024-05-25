@@ -1,0 +1,36 @@
+
+path: ../datasets/test  # dataset root dir
+train: train  # train images (relative to 'path') 128 images
+val: train  # val images (relative to 'path') 128 images
+
+# Classes
+names:
+  0: sb
+  1: sr
+  2: sn
+  3: hb
+  4: hr
+  5: hn
+  6: eb
+  7: er
+  8: en
+  9: 3b
+  10: 3r
+  11: 3n
+  12: 4b
+  13: 4r
+  14: 4n
+  15: 5b
+  16: 5r
+  17: 5n
+  18: ob
+  19: or
+  20: on
+  21: bb
+  22: br
+  23: B3b
+  24: B3r
+  25: B4b
+  26: B4r
+  27: B5b
+  28: B5r
