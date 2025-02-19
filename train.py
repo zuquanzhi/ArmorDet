@@ -325,7 +325,7 @@ def train(hyp, opt, device, callbacks):  # hyp is path/to/hyp.yaml or hyp dictio
                     imgs = nn.functional.interpolate(imgs, size=ns, mode='bilinear', align_corners=False)
 
             # Forward
-            with torch.cuda.amp.autocast(amp):
+            with torch.amp.autocast('cuda'):
                 pred = model(imgs)  # 前向传播 3*[16, 3, 80, 80, 85] 16是bs, 3是三个anchor，8080是特征图大小,85是80+5
                 loss, loss_items = compute_loss(pred, targets.to(device))  # targets 形状是(n,6)，n是一个batch里所有gt box的数量，6的每一个维度为(图片在batch中的索引， 目标类别， x, y, w, h)
                 if RANK != -1:
